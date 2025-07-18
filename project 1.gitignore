@@ -1,0 +1,13 @@
+# Virtual Environment
+env/
+
+# Django generated files
+*.pyc
+__pycache__/
+db.sqlite3
+
+# Media files
+media/
+
+# Static files collected by collectstatic
+staticfiles/

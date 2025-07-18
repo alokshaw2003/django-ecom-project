@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My E-com Store{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <a class="nav-brand" href="{% url 'products:product_list' %}">E-com Store</a>
+                <div class="nav-links">
+                    <a href="{% url 'products:product_list' %}">Products</a>
+                    <a href="{% url 'cart:cart_detail' %}">
+                        Cart
+                        {% if cart|length > 0 %}
+                            <span class="cart-count">({{ cart|length }})</span>
+                        {% endif %}
+                    </a>
+                    <div class="dropdown">
+                        <input type="checkbox" id="dropdown-toggle" class="dropdown-toggle">
+                        <label for="dropdown-toggle" class="dropdown-btn">
+                            {% if user.is_authenticated %}
+                                Hi, {{ user.username }}! &#x25BC;
+                            {% else %}
+                                Login &#x25BC;
+                            {% endif %}
+                        </label>
+                        <div class="dropdown-content">
+                            {% if user.is_authenticated %}
+                                <a href="#">My Profile</a>
+                                <a href="#">Orders</a>
+                                <a href="{% url 'accounts:logout' %}">Logout</a>
+                            {% else %}
+                                <a class="dropdown-login" href="{% url 'accounts:login' %}">Login</a>
+                                <a class="dropdown-signup" href="{% url 'accounts:signup' %}">New customer? Sign Up</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container">
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="{% url 'core:about' %}">About Us</a> |
+                <a href="{% url 'core:contact' %}">Contact Us</a> |
+                <a href="{% url 'core:help' %}">Help & FAQs</a> |
+                <a href="{% url 'core:terms' %}">Terms of Service</a>
+            </div>
+            <p>&copy; 2025 E-com Store. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

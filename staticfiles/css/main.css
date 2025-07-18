@@ -1,0 +1,225 @@
+/* static/css/main.css */
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0; /* Changed from 20px to 0 */
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #4a4a4a;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.product-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.product-item {
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.product-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+}
+
+.product-name {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.product-price {
+    color: #007bff;
+    font-weight: bold;
+}
+
+.product-name a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.product-name a:hover {
+    text-decoration: underline;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 1rem 2rem;
+    margin-bottom: 30px;
+}
+
+.nav-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #333;
+    text-decoration: none;
+}
+
+.nav-links a {
+    color: #555;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 1.1rem;
+}
+
+.nav-links a:hover {
+    color: #007bff;
+}
+
+/* General button style */
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Cart Table Styles */
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.cart-table th, .cart-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.cart-table th {
+    background-color: #f8f8f8;
+}
+
+.total-price-summary {
+    text-align: right;
+    font-size: 1.5rem;
+}
+
+.button-link {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.cart-count {
+    background-color: #007bff;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.8rem;
+    vertical-align: top;
+}
+
+/* Update and Remove Button Styles */
+.button-update, .button-remove {
+    padding: 5px 10px;
+    font-size: 0.9rem;
+}
+
+.button-remove {
+    background-color: #dc3545;
+}
+
+.button-remove:hover {
+    background-color: #c82333;
+}
+/* Dropdown Menu Styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 15px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.dropdown-btn:hover, .dropdown-btn:focus {
+    background-color: #0056b3;
+}
+
+.dropdown-content {
+    display: none; /* Hidden by default */
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+    right: 0; /* Align to the right of the button */
+    padding: 10px 0;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    margin-left: 0; /* Override general nav-links a style */
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown-signup {
+    font-size: 0.9rem;
+    text-align: center;
+    border-top: 1px solid #ccc;
+    padding-top: 10px !important; /* Use !important to override specificity */
+    margin-top: 5px;
+}
+
+/* This class is added by JavaScript to show the dropdown */
+.show {
+    display: block;
+}
